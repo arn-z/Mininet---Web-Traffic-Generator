@@ -1,12 +1,4 @@
 #!/usr/bin/python
-
-"""
-Create a 1024-host network, and run the CLI on it.
-If this fails because of kernel limits, you may have
-to adjust them, e.g. by adding entries to /etc/sysctl.conf
-and running sysctl -p. Check util/sysctl_addon.
-"""
-
 from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.node import OVSSwitch
@@ -17,7 +9,7 @@ import time, datetime
 
 def initialize_host(host, name, experiment):
 	details = name + ' ' + experiment
-	status = host.cmd('python3 /home/fastflux/files/gen.py %s &' % details)
+	status = host.cmd('python3 /home/fastflux/files/trafficgen.py %s &' % details)
 	print(status)
 
 def initialize_dns(host, name, experiment):
