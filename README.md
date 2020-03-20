@@ -2,7 +2,7 @@
 
 ## *mininet_deploy.py*
 To run it, first edit your nameserver to point to the first host (10.0.0.1).  
-Asks for the number of hosts and the experiment title and automatically creates the experiment directory and the log files for the hosts.  
+Asks for the number of hosts and experiment title. It automatically creates the experiment directory and the log files for the hosts.  
 The first host is automatically selected as the one running *dnschef.py* whch acts as a DNS resolver for the other hosts.  
 The rest of the hosts will generate traffic by running *trafficgen.py*   
 If the run encounters an error, you can continue running it by using the same experiment name.  
@@ -29,6 +29,3 @@ There are three modes:
 1) **Pure proxy** - requests are just forwarded to public DNS servers
 2) **Proxy & Pure Spoofing** - all the requests from the selected hosts are automatically spoofed. The rest are proxied.
 3) **Proxy & Periodical Spoofing** - the selected hosts take turns on being spoofed. Each turn is good for ten minutes.
-
-
-
